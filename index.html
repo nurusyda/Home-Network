@@ -1,1 +1,99 @@
-Hello World!
+### Home Network (Beginner Level)
+
+#### 1. **Network Diagrams**
+
+- **Logical Topology**:
+    - Server → Router → Switch + Wireless Router → End Devices (PCs, Printer, etc.) **V**
+    - Wireless Router connected to the Router for Wi-Fi clients. **V**
+- **IP Addressing Scheme**:
+    - Server IP: 8.8.8.8/24 **V**
+    - Default Gateway: 192.168.0.1/24 **V**
+    - DHCP Range: 192.168.0.0/24 **V**
+
+#### 2. **Configuration Guide**
+
+- **Step-by-Step Configuration**:
+    
+    1. Configure Router LAN Interface: **V**
+        
+        ```
+        interface FastEthernet1/0
+        ip address 192.168.0.1 255.255.255.0
+        no shutdown
+        ```
+        
+    2. Enable DHCP: **V**
+        
+        ```
+        ip dhcp pool HOME
+        network 192.168.1.0 255.255.255.0
+        default-router 192.168.1.1
+        dns-server 8.8.8.8
+        ```
+        3.  Connect Wireless Router to Main Router. **V**
+	    4. WPA2 wireless security **V**
+- **Device Configurations**:
+        - Router: Basic setup with DHCP. **V**
+	    - Wireless Router: Default gateway 192.168.1.1, DHCP enabled. **V**
+- **Security Implementations**:
+        - Set up WPA2 encryption on the Wireless Router. **V**
+- **Troubleshooting Procedures**:
+        - Check IP address allocation from DHCP.
+	    - Verify connectivity using `ping` from wired and wireless devices.
+
+#### 3. **Test Plans**
+
+- **Connectivity Tests**:
+    - Ping Router from PC (e.g., `ping 192.168.1.1`). **V**
+    - Ping a public DNS server (e.g., `ping 8.8.8.8`) to confirm internet access. **V**
+
+#### 4. **Purpose and Challenges**
+
+- **Purpose**: To provide reliable internet connectivity for a small home environment.
+- **Challenges Resolved**: Configured DHCP for automatic IP allocation, ensuring seamless connectivity for all devices.
+
+----
+Component: [Name]
+Purpose:
+- Primary function
+- Business need addressed
+- Technical requirements met
+
+Challenges Resolved:
+1. Challenge: [Description]
+   Solution: [Implementation]
+   Result: [Outcome]
+
+2. Challenge: [Description]
+   Solution: [Implementation]
+   Result: [Outcome]
+
+Lessons Learned:
+- Key takeaway 1
+- Key takeaway 2
+
+Future Considerations:
+- Scalability notes
+- Potential improvements
+- Upcoming challenges
+
+----
+## Main Objectives
+- basic internet connectivity setup **V**
+- wireless and wired device connectivity **V**
+- simple network security **V**
+- IP addressing **V**
+- DHCP for automatic IP assignment **V**
+## Key Features
+- Devices: ISP cloud, router, switch,  a few PCs/laptops, smartphones(?), and a printer. **V**
+- Simple file sharing between devices **V**
+- WRT300N wireless router configuration **V**
+- Printer sharing setup **V (ping aja)**
+- DHCP for automatic IP configuration. **V** 
+- Internet connectivity (e.g., pinging 8.8.8.8 from devices). **V**
+- Security basics (e.g., WPA2 for Wi-Fi, basic router passwords). **V**
+- Basic network security (WPA2) **V**
+- Troubleshooting (e.g., common issues like IP conflicts). **V**
+- Basic troubleshooting scenarios **V (kinda)**
+## Purpose
+- Highlight foundational knowledge of networking setup and troubleshooting.
