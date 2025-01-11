@@ -3,26 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screenshot Example</title>
+    <title>Home Network (Beginner Level)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 20px;
             background-color: #f9f9f9;
+            color: #333;
         }
-        img {
+        h1, h2, h3, h4 {
+            color: #0056b3;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        code {
             display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 20px auto;
-            border: 1px solid #ccc;
+            background: #eee;
+            padding: 10px;
+            margin: 10px 0;
             border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .highlight {
+            background-color: #e0f7fa;
+            padding: 5px;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
-    <h1>Configuration Guide Screenshot</h1>
-    <p>This is a sample screenshot of the configuration guide:</p>
-    <img src="image.png" alt="Screenshot of Configuration Guide" title="Configuration Guide">
+    <h1>Home Network (Beginner Level)</h1>
+
+    <div class="section">
+        <h2>1. Network Diagrams</h2>
+        <h3>Logical Topology:</h3>
+        <ul>
+            <li>Server → Router → Switch + Wireless Router → End Devices (PCs, Printer, etc.)</li>
+            <li>Wireless Router connected to the Router for Wi-Fi clients.</li>
+        </ul>
+        <h3>IP Addressing Scheme:</h3>
+        <ul>
+            <li>Server IP: <span class="highlight">8.8.8.8/24</span></li>
+            <li>Default Gateway: <span class="highlight">192.168.0.1/24</span></li>
+            <li>DHCP Range: <span class="highlight">192.168.0.0/24</span></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. Configuration Guide</h2>
+        <h3>Step-by-Step Configuration:</h3>
+        <ol>
+            <li>
+                Configure Router LAN Interface:
+                <code>
+interface FastEthernet1/0<br>
+ip address 192.168.0.1 255.255.255.0<br>
+no shutdown
+                </code>
+            </li>
+            <li>
+                Enable DHCP:
+                <code>
+ip dhcp pool HOME<br>
+network 192.168.1.0 255.255.255.0<br>
+default-router 192.168.1.1<br>
+dns-server 8.8.8.8
+                </code>
+            </li>
+            <li>Connect Wireless Router to Main Router.</li>
+            <li>Set WPA2 wireless security.</li>
+        </ol>
+        <h3>Device Configurations:</h3>
+        <ul>
+            <li>Router: Basic setup with DHCP.</li>
+            <li>Wireless Router: Default gateway 192.168.1.1, DHCP enabled.</li>
+        </ul>
+        <h3>Security Implementations:</h3>
+        <ul>
+            <li>Set up WPA2 encryption on the Wireless Router.</li>
+        </ul>
+        <h3>Troubleshooting Procedures:</h3>
+        <ul>
+            <li>Check IP address allocation from DHCP.</li>
+            <li>Verify connectivity using <code>ping</code> from wired and wireless devices.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Test Plans</h2>
+        <h3>Connectivity Tests:</h3>
+        <ul>
+            <li>Ping Router from PC (e.g., <code>ping 192.168.1.1</code>).</li>
+            <li>Ping a public DNS server (e.g., <code>ping 8.8.8.8</code>) to confirm internet access.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. Purpose and Challenges</h2>
+        <h3>Purpose:</h3>
+        <p>To provide reliable internet connectivity for a small home environment.</p>
+        <h3>Challenges Resolved:</h3>
+        <ul>
+            <li>Configured DHCP for automatic IP allocation, ensuring seamless connectivity for all devices.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Components</h2>
+        <p><strong>Purpose:</strong></p>
+        <ul>
+            <li>Primary function</li>
+            <li>Business need addressed</li>
+            <li>Technical requirements met</li>
+        </ul>
+        <h3>Challenges Resolved:</h3>
+        <ol>
+            <li>
+                <strong>Challenge:</strong> [Description]<br>
+                <strong>Solution:</strong> [Implementation]<br>
+                <strong>Result:</strong> [Outcome]
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Main Objectives</h2>
+        <ul>
+            <li>Basic internet connectivity setup</li>
+            <li>Wireless and wired device connectivity</li>
+            <li>Simple network security</li>
+            <li>IP addressing</li>
+            <li>DHCP for automatic IP assignment</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Devices: ISP cloud, router, switch, a few PCs/laptops, smartphones, and a printer.</li>
+            <li>Simple file sharing between devices</li>
+            <li>WRT300N wireless router configuration</li>
+            <li>Printer sharing setup</li>
+            <li>DHCP for automatic IP configuration</li>
+            <li>Internet connectivity (e.g., pinging 8.8.8.8 from devices)</li>
+            <li>Security basics (e.g., WPA2 for Wi-Fi, basic router passwords)</li>
+            <li>Basic troubleshooting scenarios</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Created for educational purposes.</p>
+    </footer>
 </body>
 </html>
