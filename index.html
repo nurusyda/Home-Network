@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Network (Beginner Level)</title>
+    <title>Home Network: Router Configuration, DHCP, WPA2 Security, and IP Addressing</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -96,28 +96,28 @@
     
     <div class="section">
         <h2>1. Objective</h2>
-        <p>Aim to simulate reliable connectivity for a small home environment.</p>
+        <p>To simulate and establish reliable network connectivity for a small home environment.</p>
     </div>
 
     <div class="section">
-        <h2>2. Skills Learned</h2>
+        <h2>2. Skills Developed</h2>
         <ul>
-            <li>Router Configuration: Wired and Wireless</li>
-            <li>IP Addressing</li>
-            <li>Configured DHCP for automatic IP allocation</li>
-            <li>Simple Network Security using WPA2</li>
+            <li>Router Configuration: Wired and Wireless Setup</li>
+            <li>IP Address Management</li>
+            <li>DHCP Configuration for Automatic IP Allocation</li>
+            <li>Basic Network Security Implementation using WPA2</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>3. Tools Used</h2>
+        <h2>3. Tools Utilized</h2>
         <ul>
-            <li>Cisco Packet Tracers 8.2.2.0400 version</li>
+            <li>Cisco Packet Tracer version 8.2.2.0400</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>4. Walk-through</h2>
+        <h2>4. Implementation Guide</h2>
         
         <h3>Network Topology</h3>
         <p>[Topology's Screenshot]</p>
@@ -127,76 +127,76 @@
         <table>
             <tr>
                 <th>Devices</th>
-                <th>IP</th>
+                <th>IP Address</th>
             </tr>
             <tr>
-                <td>Server as Internet</td>
+                <td>Internet Server</td>
                 <td>8.8.8.8/24</td>
             </tr>
             <tr>
-                <td>Main Router as Default Gateway (Cisco 2xxx)</td>
-                <td>192.168.0.1</td>
+                <td>Main Router (Default Gateway - Cisco 2xxx)</td>
+                <td>192.168.0.1/24</td>
             </tr>
             <tr>
-                <td>Switch (Cisco XXXX)</td>
+                <td>Network Switch (Cisco XXXX)</td>
                 <td></td>
             </tr>
             <tr>
                 <td>Wireless Router (WRT300N)</td>
-                <td>192.168.0.2</td>
+                <td>192.168.0.2/24</td>
             </tr>
             <tr>
                 <td>PC0</td>
-                <td>192.168.0.100</td>
+                <td>192.168.0.100/24</td>
             </tr>
             <tr>
                 <td>PC1</td>
-                <td>192.168.0.101</td>
+                <td>192.168.0.101/24</td>
             </tr>
             <tr>
                 <td>PC2</td>
-                <td>192.168.0.102</td>
+                <td>192.168.0.102/24</td>
             </tr>
             <tr>
                 <td>Printer0</td>
                 <td>192.168.0.103</td>
             </tr>
             <tr>
-                <td>Server FTP</td>
-                <td>192.168.0.104</td>
+                <td>FTP Server</td>
+                <td>192.168.0.104/24</td>
             </tr>
             <tr>
                 <td>Laptop0</td>
-                <td>192.168.0.105</td>
+                <td>192.168.0.105/24</td>
             </tr>
             <tr>
                 <td>Laptop1</td>
-                <td>192.168.0.106</td>
+                <td>192.168.0.106/24</td>
             </tr>
             <tr>
                 <td>Laptop2</td>
-                <td>192.168.0.107</td>
+                <td>192.168.0.107/24</td>
             </tr>
             <tr>
                 <td>Smartphone0</td>
-                <td>192.168.0.108</td>
+                <td>192.168.0.108/24</td>
             </tr>
             <tr>
                 <td>Smartphone1</td>
-                <td>192.168.0.109</td>
+                <td>192.168.0.109/24</td>
             </tr>
         </table>
 
         <h3>Configuration Steps</h3>
-        <h4>Router Configuration</h4>
-        <p>Server to Main Router Configuration:</p>
+        <h4>Router Setup</h4>
+        <p>Enter the following commands in the Main Router CLI:</p>
         <pre>
 interface FastEthernet1/0
 ip address 192.168.0.1 255.255.255.0
 no shutdown</pre>
 
         <h4>DHCP Configuration</h4>
-        <p>Main Router CLI configuration:</p>
+        <p>Enter the following commands in the Main Router CLI:</p>
         <pre>
 ip dhcp pool HOME
 network 192.168.0.0 255.255.255.0
@@ -206,24 +206,24 @@ ip dhcp excluded-address 192.168.0.1 192.168.0.99</pre>
 
         <h3>Network Security</h3>
         <p>[SS before wpa2, security window edit, and after wpa2]<br>
-        before and after wpa2 enabled to clients</p>
+        Before and after enabling WPA2 security for wireless clients</p>
 
         <h3>Testing and Verification</h3>
         <p>[SS ping router and public DNS server]<br>
-        Connectivity Test</p>
+        Router and public DNS server ping tests</p>
 
-        <h3>File Sharing</h3>
+        <h3>File Sharing Implementation</h3>
         <p>[SS ragkaian dari buat dokumen, nyimpen, sampai ngirim ke ftp, dan ngambil dari server]<br>
-        all about sending file</p>
+         Complete file sharing process documentation</p>
 
         <h3>Troubleshooting Procedures</h3>
         <ul>
-            <li>Network Connectivity: [SS total ping pake `arp -a` atau ping manual dari salah satu client]<br>
-            pings worked</li>
-            <li>DHCP Status: [SS DHCP binding]<br>
-            DHCP binding `show ip dhcp binding`</li>
-            <li>DHCP Issues: [SS DHCP conflict]<br>
-            Conflict regarding DHCP binding `show ip dhcp conflict`</li>
+            <li>Network Connectivity Verification: [SS total ping pake `arp -a` atau ping manual dari salah satu client]<br>
+            Successful ping test results</li>
+            <li>DHCP Status Verification: [SS DHCP binding]<br>
+            Output of `show ip dhcp binding` command</li>
+            <li>DHCP Conflict Resolution: [SS DHCP conflict]<br>
+            Results of `show ip dhcp conflict` command</li>
         </ul>
     </div>
 </body>
