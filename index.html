@@ -107,6 +107,7 @@
             <li>1 Main Router (Cisco 2811)</li>
             <li>1 Network Switch (Cisco 2960-24TT)</li>
             <li>1 Wireless Router (WRT300N)</li>
+            <li>1 FTP Server </li>
             <li>Multiple end devices (PCs, laptops, smartphones, and a printer)</li>
         </ul>
 
@@ -125,7 +126,7 @@
             <tr>
                 <td>Workstations</td>
                 <td>192.168.0.100 - 192.168.0.105</td>
-                <td>Desktop computers</td>
+                <td>Desktop computers and FTP Server</td>
             </tr>
             <tr>
                 <td>Mobile Devices</td>
@@ -355,6 +356,52 @@ show ip dhcp server statistics</pre>
             </div>
         </div>
     </div>
+    <h3>4. Wireless Security Implementation</h3>
+        <div class="subsection">
+            <h4>Initial State (Before Security)</h4>
+            <img src="images/WPA20.png" width="800" height="300" alt="Initial Wireless Settings"/>
+            <img src="images/WPA24.png" width="800" height="500" alt="Default Security Settings"/>
+            
+            <h4>Implementing WPA2 Security</h4>
+            <ol>
+                <li>Access the Wireless Router configuration page</li>
+                <li>Enable WPA2 Personal security mode</li>
+                <li>Set PSK: secure123</li>
+                <li>Apply the same settings on wireless clients</li>
+            </ol>
+            <img src="images/WPA25.png" width="800" height="500" alt="WPA2 Configuration"/>
+            <img src="images/WPA26.png" width="800" height="500" alt="Client WPA2 Settings"/>
+        </div>
+
+        <h3>5. File Sharing Setup</h3>
+        <div class="subsection">
+            <h4>Setting Up the FTP Server</h4>
+            <img src="images/Send-File2.png" width="800" height="400" alt="FTP Server Configuration"/>
+            <p>Server Credentials:</p>
+            <ul>
+                <li>Username: cisco</li>
+                <li>Password: [specified during setup]</li>
+            </ul>
+
+            <h4>File Transfer Example</h4>
+            <ol>
+                <li>Create test file on Laptop1</li>
+                <li>Upload file to FTP server:</li>
+                <pre>
+ftp 192.168.0.105
+username: cisco
+password: [enter password]
+put The_Clockmaker's_Secret.txt</pre>
+                <li>Download file from another device:</li>
+                <pre>
+ftp 192.168.0.105
+username: cisco
+password: [enter password]
+get The_Clockmaker's_Secret.txt</pre>
+            </ol>
+        </div>
+    </div>
+
     </div>
 
     <div class="section">
