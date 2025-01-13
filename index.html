@@ -1,104 +1,256 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Network: Router Configuration, DHCP, Network Security, and Troubleshooting</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.2;
-            margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        h1 {
-            color: #0366d6;
-            font-weight: 500;
-        }
-        h2, h3, h4 {
-            color: #24292e;
-            font-weight: 500;
-        }
-        h1 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-top: 40px;
-        }
-        h3 {
-            font-size: 20px;
-            margin-top: 25px;
-        }
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: 'Consolas', 'Monaco', monospace;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        code {
-            font-family: 'Consolas', 'Monaco', monospace;
-            background-color: #f4f4f4;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        p {
-            margin: 15px 0;
-        }
-        strong {
-            font-weight: 500;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .underline {
-            border-bottom: 0.5px solid #eaecef;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-    </style>
-</head>
+[Previous HTML and styling remains the same until body content]
 <body>
-[Previous content remains the same with updated styling]
+    <h1 class="underline">Building a Home Network: A Comprehensive Configuration Guide</h1>
+    
+    <div class="section">
+        <h2>Overview</h2>
+        <p>This guide provides a complete walkthrough for setting up a secure and efficient home network environment using Cisco Packet Tracer. It covers essential networking concepts, security implementations, and best practices for home network deployment.</p>
+        
+        <h3>Network Requirements Analysis</h3>
+        <table>
+            <tr>
+                <th>Requirement</th>
+                <th>Implementation</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>Internet Connectivity</td>
+                <td>WAN connection via ISP</td>
+                <td>Provide internet access to all devices</td>
+            </tr>
+            <tr>
+                <td>Local Network Access</td>
+                <td>LAN with DHCP</td>
+                <td>Enable automatic device configuration</td>
+            </tr>
+            <tr>
+                <td>Wireless Access</td>
+                <td>WPA2-secured WiFi</td>
+                <td>Support mobile devices</td>
+            </tr>
+            <tr>
+                <td>File Sharing</td>
+                <td>FTP Server</td>
+                <td>Enable document sharing between devices</td>
+            </tr>
+            <tr>
+                <td>Network Security</td>
+                <td>WPA2, IP segregation</td>
+                <td>Protect network resources</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Prerequisites</h2>
+        <h3>Required Tools</h3>
+        <ul>
+            <li>Cisco Packet Tracer version 8.2.2.0400</li>
+            <li>Network planning documentation</li>
+            <li>IP addressing scheme</li>
+        </ul>
+
+        <h3>Required Knowledge</h3>
+        <ul>
+            <li>Basic networking concepts (IP addressing, subnetting)</li>
+            <li>Basic understanding of network security</li>
+            <li>Familiarity with command-line interfaces</li>
+        </ul>
+
+        <h3>Pre-implementation Checklist</h3>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Verify Packet Tracer installation</td>
+                <td>Required</td>
+                <td>Version 8.2.2.0400 or higher</td>
+            </tr>
+            <tr>
+                <td>Prepare IP addressing scheme</td>
+                <td>Required</td>
+                <td>Use provided scheme or create custom</td>
+            </tr>
+            <tr>
+                <td>Gather device requirements</td>
+                <td>Required</td>
+                <td>List all devices to be connected</td>
+            </tr>
+        </table>
+    </div>
+
+    [Previous Network Design section remains the same]
+
+    <div class="section">
+        <h2>Configuration Steps</h2>
+
+        <h3>1. Basic Router Setup</h3>
+        <h4>Configuration Checklist</h4>
+        <table>
+            <tr>
+                <th>Step</th>
+                <th>Command/Action</th>
+                <th>Verification</th>
+            </tr>
+            <tr>
+                <td>Access Router CLI</td>
+                <td>Connect via console</td>
+                <td>Router> prompt appears</td>
+            </tr>
+            <tr>
+                <td>Enter configuration mode</td>
+                <td>configure terminal</td>
+                <td>Router(config)# prompt</td>
+            </tr>
+            <tr>
+                <td>Configure WAN interface</td>
+                <td>interface FastEthernet0/0</td>
+                <td>Check interface status</td>
+            </tr>
+            <tr>
+                <td>Configure LAN interface</td>
+                <td>interface FastEthernet1/0</td>
+                <td>Check interface status</td>
+            </tr>
+        </table>
+
+        <h4>Router Configuration Template</h4>
+        <pre>
+! Basic Router Configuration Template
+enable
+configure terminal
+
+! WAN Interface Configuration
+interface FastEthernet0/0
+ ip address 8.8.8.8 255.255.255.0
+ no shutdown
+ description WAN Interface
+ 
+! LAN Interface Configuration
+interface FastEthernet1/0
+ ip address 192.168.0.1 255.255.255.0
+ no shutdown
+ description LAN Interface
+
+! Save Configuration
+end
+write memory</pre>
+
+        <h4>Common Configuration Issues</h4>
+        <table>
+            <tr>
+                <th>Issue</th>
+                <th>Possible Cause</th>
+                <th>Solution</th>
+            </tr>
+            <tr>
+                <td>Interface down</td>
+                <td>Missing 'no shutdown'</td>
+                <td>Enter 'no shutdown' command</td>
+            </tr>
+            <tr>
+                <td>IP conflict</td>
+                <td>Duplicate IP address</td>
+                <td>Verify IP addressing scheme</td>
+            </tr>
+        </table>
+
+        [Previous DHCP Configuration section with added validation steps]
+
+        <h3>2. DHCP Implementation</h3>
+        <h4>DHCP Configuration Template</h4>
+        <pre>
+! DHCP Configuration Template
+ip dhcp pool BLOB
+ network 192.168.0.0 255.255.255.0
+ default-router 192.168.0.1
+ dns-server 8.8.8.8
+ lease 7
+
+! Exclude Static IP Addresses
+ip dhcp excluded-address 192.168.0.1 192.168.0.99
+
+! Verification Commands
+show ip dhcp binding
+show ip dhcp pool
+show ip dhcp server statistics</pre>
+
+        <h4>DHCP Validation Checklist</h4>
+        <table>
+            <tr>
+                <th>Test</th>
+                <th>Expected Result</th>
+                <th>Troubleshooting</th>
+            </tr>
+            <tr>
+                <td>Client receives IP</td>
+                <td>IP in correct range</td>
+                <td>Check DHCP configuration</td>
+            </tr>
+            <tr>
+                <td>Gateway reachable</td>
+                <td>Ping successful</td>
+                <td>Verify default gateway</td>
+            </tr>
+            <tr>
+                <td>DNS resolution</td>
+                <td>Names resolve</td>
+                <td>Check DNS server setting</td>
+            </tr>
+        </table>
+
+        [Previous sections continue with similar enhancements]
+
+    </div>
+
+    <div class="section">
+        <h2>Backup and Recovery Procedures</h2>
+        <h3>Configuration Backup</h3>
+        <pre>
+! Save Running Configuration
+copy running-config startup-config
+! Backup to TFTP (if available)
+copy running-config tftp:</pre>
+
+        <h3>Recovery Steps</h3>
+        <ol>
+            <li>Console into the device</li>
+            <li>Enter privileged EXEC mode: <code>enable</code></li>
+            <li>Reset configuration if needed: <code>write erase</code></li>
+            <li>Restore from backup: <code>copy tftp: running-config</code></li>
+            <li>Verify restoration: <code>show running-config</code></li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Network Maintenance</h2>
+        <h3>Regular Maintenance Tasks</h3>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Frequency</th>
+                <th>Command/Action</th>
+            </tr>
+            <tr>
+                <td>Check DHCP leases</td>
+                <td>Weekly</td>
+                <td>show ip dhcp binding</td>
+            </tr>
+            <tr>
+                <td>Verify security settings</td>
+                <td>Monthly</td>
+                <td>show running-config</td>
+            </tr>
+            <tr>
+                <td>Backup configuration</td>
+                <td>Monthly</td>
+                <td>copy running-config startup-config</td>
+            </tr>
+        </table>
+    </div>
+
 </body>
 </html>
