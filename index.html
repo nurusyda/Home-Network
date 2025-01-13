@@ -93,16 +93,48 @@
 </head>
 <body>
 <h1 class="underline">Building a Home Network: A Comprehensive Configuration Guide</h1>
+   <h2>Overview</h2>
+       <p>This guide explains how to set up a secure, efficient home network using Cisco Packet Tracer, covering key concepts, security measures, and best practices.</p>
+
     <h2>Network Topology</h2>
         <div class="screenshot-container">
         <img src="images/Topology1.png" width="800" height="300" />
         <p class="caption">Figure 1: Complete network topology showing router, switch, and end devices</p>
     </div>
-    
-    <div class="section">
-        <h2>Overview</h2>
-        <p>This guide explains how to set up a secure, efficient home network using Cisco Packet Tracer, covering key concepts, security measures, and best practices.</p>
+            <p>The network consists of:</p>
+        <ul>
+            <li>1 Internet Server (simulating WAN connection)</li>
+            <li>1 Main Router (Cisco 2811)</li>
+            <li>1 Network Switch (Cisco 2960-24TT)</li>
+            <li>1 Wireless Router (WRT300N)</li>
+            <li>Multiple end devices (PCs, laptops, smartphones, and a printer)</li>
+        </ul>
 
+        <h3>Network Addressing Scheme</h3>
+        <table>
+            <tr>
+                <th>Device Category</th>
+                <th>IP Range</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>Infrastructure</td>
+                <td>192.168.0.1 - 192.168.0.99</td>
+                <td>Reserved for network devices (routers, switches)</td>
+            </tr>
+            <tr>
+                <td>Workstations</td>
+                <td>192.168.0.100 - 192.168.0.105</td>
+                <td>Desktop computers</td>
+            </tr>
+            <tr>
+                <td>Mobile Devices</td>
+                <td>192.168.0.106 - 192.168.0.112</td>
+                <td>Laptops, smartphones</td>
+            </tr>
+        </table>
+    <div class="section">
+       
         <h3>Network Requirements Analysis</h3>
         <table>
             <tr>
@@ -319,7 +351,7 @@ show ip dhcp server statistics</pre>
             </div>
             <div class="screenshot-item">
                 <img src="images/Traceroute.png" width="800" height="500" />
-                <p class="caption">Figure 6: Traceroute verification showing differences between existing (IP 8.8.8.8 - 192.168.0.2) and non-existent IPs (IP 192.168.0.104.</p>
+                <p class="caption">Figure 6: Traceroute verification comparing existing IPs (8.8.8.8, 192.168.0.2) with a non-existent IP (192.168.0.104).</p>
             </div>
         </div>
     </div>
