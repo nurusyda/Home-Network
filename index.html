@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Network: Router Configuration, DHCP, WPA2 Security, and IP Addressing</title>
+    <title>Home Network: Router Configuration, DHCP, Network Security, and Troubleshooting</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -92,7 +92,7 @@
     </style>
 </head>
 <body>
-    <h1 class="underline">Home Network: Router Configuration, DHCP, WPA2 Security, and IP Addressing</h1>
+    <h1 class="underline">Home Network: Router Configuration, DHCP, Network Security, and Troubleshooting</h1>
     
     <div class="section">
         <h2>1. Objective</h2>
@@ -217,15 +217,18 @@ ip dhcp excluded-address 192.168.0.1 192.168.0.99</pre>
         <img src="images/WPA22.png" width="800" height="300" />
         <img src="images/WPA25.png" width="800" height="500" />
         <img src="images/WPA26.png" width="800" height="500" />
-         <p>Security Mode WPA2 Personal Enabled with PSK <em>secure123</em></p>
+        <p>Security Mode WPA2 Personal Enabled with PSK <em>secure123</em>.</p>
 
         <h3>Testing and Verification</h3>
-        <p>[SS ping router and public DNS server]<br>
-        Router and public DNS server ping tests</p>
+        <img src="images/Troubleshoot1.png" width="800" height="300" />
+        <img src="images/Troubleshoot2.png" width="800" height="300" />
+        <p>Ping test and `show ip arp` command.</p>
 
         <h3>File Sharing Implementation</h3>
-        <p>[SS ragkaian dari buat dokumen, nyimpen, sampai ngirim ke ftp, dan ngambil dari server]<br>
-         Sending Files via FTP</p>
+        <img src="images/Send-File1.png" width="800" height="300" />
+        <p>Make file in text editor Laptop1.</p>
+        <img src="images/Send-File2.png" width="800" height="300" />
+        <p>Make sure FTP is on and get the user and password.</p>
         <ol>
             <li>On Laptop1, access Command Prompt and enter the following commands to upload a file:</li>
             <pre>
@@ -233,7 +236,7 @@ ftp 192.168.0.105
 username: cisco
 password: [enter password]
 put "The_Clockmaker's_Secret.txt"</pre>
-            
+        <img src="images/Send-File3.png" width="800" height="300" />
             <li>On SmartPhone0, access Command Prompt and enter the following commands to download the file:</li>
             <pre>
 ftp 192.168.0.105
@@ -241,14 +244,11 @@ username: cisco
 password: [enter password]
 get "The_Clockmaker's_Secret.txt"</pre>
         </ol>
-
+        <img src="images/Send-File4.png" width="800" height="300" />
+        <img src="images/Send-File5.png" width="800" height="300" />
         <h3>Troubleshooting Procedures</h3>
-        <ul>
-            <li>[SS total ping pake `arp -a` atau ping manual dari salah satu client]<br>
-            Successful ping test results using `show ip arp` command</li>
-            <li>[SS DHCP binding]<br>
-            Output of `show ip dhcp binding` and `show ip dhcp conflict` command in main router</li>
-        </ul>
+        <img src="images/Troubleshoot0.png" width="800" height="300" />
+        <p>Output of `show ip dhcp binding` and `show ip dhcp conflict` command in main router.</p>
     </div>
 </body>
 </html>
