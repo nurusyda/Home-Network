@@ -191,6 +191,9 @@
         <h4>Router Setup</h4>
         <p>Enter the following commands in the Main Router CLI:</p>
         <pre>
+interface FastEthernet0/0
+ip address 8.8.8.8 255.255.255.0
+no shutdown
 interface FastEthernet1/0
 ip address 192.168.0.1 255.255.255.0
 no shutdown</pre>
@@ -198,7 +201,7 @@ no shutdown</pre>
         <h4>DHCP Configuration</h4>
         <p>Enter the following commands in the Main Router CLI:</p>
         <pre>
-ip dhcp pool HOME
+ip dhcp pool BLOB
 network 192.168.0.0 255.255.255.0
 default-router 192.168.0.1
 dns-server 8.8.8.8
@@ -223,12 +226,12 @@ username: cisco
 password: [enter password]
 put "The_Clockmaker's_Secret.txt"</pre>
             
-            <li>On another client device, access Command Prompt and enter the following commands to download the file:</li>
+            <li>On SmartPhone0, access Command Prompt and enter the following commands to download the file:</li>
             <pre>
 ftp 192.168.0.105
 username: cisco
 password: [enter password]
-get "The Midnight Library.txt"</pre>
+get "The_Clockmaker's_Secret.txt"</pre>
         </ol>
 
         <h3>Troubleshooting Procedures</h3>
