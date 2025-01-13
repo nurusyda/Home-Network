@@ -344,6 +344,8 @@ show ip dhcp server statistics</pre>
         </table>
 <h3>3. Connectivity Testing</h3>
     <div class="verification-screenshots">
+        <div class="subsection">
+            <h4>Ping Testing</h4>
         <div class="screenshot-row">
             <div class="screenshot-item">
                 <img src="images/Troubleshoot1.png" width="800" height="500" />
@@ -355,6 +357,19 @@ show ip dhcp server statistics</pre>
                 <p class="caption">Figure 6: Traceroute verification comparing existing IPs (8.8.8.8, 192.168.0.2) with a non-existent IP (192.168.0.104).</p>
             </div>
         </div>
+       </div>
+        <div class="subsection">
+            <h4>Internet Testing</h4>
+            <div class="screenshot-item">
+                <img src="images/DNS0.png" width="800" height="500" />
+                <p class="caption">Figure 7: Configuring DNS on the Internet Server with cisco.com and its IP.</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="images/DNS1.png" width="800" height="500" />
+                <img src="images/DNS2.png" width="800" height="500" />
+                <p class="caption">Figure 8: Accessing cisco.com and its IP from Desktop and Laptop.</p>
+            </div>
+        </div>
     </div>
     <h3>4. Wireless Security Implementation</h3>
         <div class="subsection">
@@ -362,7 +377,7 @@ show ip dhcp server statistics</pre>
             <div class="screenshot-item">
                 <img src="images/WPA20.png" width="800" height="300" alt="Initial Wireless Settings"/>
                 <img src="images/WPA24.png" width="800" height="500" alt="Default Security Settings"/>
-                <p class="caption">Figure 7: Initial state without WPA2 security, allowing automatic internet access.</p>
+                <p class="caption">Figure 9: Initial state without WPA2 security, allowing automatic internet access.</p>
             </div>
                 <h4>Implementing WPA2 Security</h4>
             <ol>
@@ -374,7 +389,7 @@ show ip dhcp server statistics</pre>
             <div class="screenshot-item">
                 <img src="images/WPA25.png" width="800" height="500" alt="WPA2 Configuration"/>
                 <img src="images/WPA26.png" width="800" height="500" alt="Client WPA2 Settings"/>
-                <p class="caption">Figure 8: After enabling WPA2 security, a PSK is required for internet access.</p>
+                <p class="caption">Figure 10: After enabling WPA2 security, a PSK is required for internet access.</p>
          </div>
         </div>
 
@@ -383,7 +398,7 @@ show ip dhcp server statistics</pre>
             <h4>Setting Up the FTP Server</h4>
           <div class="screenshot-item">
                 <img src="images/Send-File2.png" width="800" height="400" alt="FTP Server Configuration"/>    
-                <p class="caption">Figure 9: Enabling FTP on the server and configuring a user with a password.</p>
+                <p class="caption">Figure 11: Enabling FTP on the server and configuring a user with a password.</p>
          </div>
             <p>Server Credentials:</p>
             <ul>
@@ -403,7 +418,7 @@ put The_Clockmaker's_Secret.txt</pre>
           <div class="screenshot-item">
             <img src="images/Send-File1.png" width="800" height="400" />
             <img src="images/Send-File3.png" width="800" height="300" />
-            <p class="caption">Figure 10: Creating a text and uploading it to the FTP server using Laptop1.</p>
+            <p class="caption">Figure 12: Creating a text and uploading it to the FTP server using Laptop1.</p>
          </div>        
 
                 <li>Download file from another device:</li>
@@ -416,7 +431,7 @@ get The_Clockmaker's_Secret.txt</pre>
          <div class="screenshot-item">
                 <img src="images/Send-File4.png" width="800" height="400" />
                 <img src="images/Send-File5.png" width="800" height="200" />
-            <p class="caption">Figure 11: Downloading the text from the FTP server using Smartphone0.</p>
+            <p class="caption">Figure 13: Downloading the text from the FTP server using Smartphone0.</p>
          </div> 
         </div>
     </div>
@@ -446,7 +461,7 @@ get The_Clockmaker's_Secret.txt</pre>
     </div>
             <div class="screenshot-item">
                 <img src="images/Running-Config.png" width="800" height="500" />
-                <p class="caption">Figure 12: Example of Security Settings Verification.</p>
+                <p class="caption">Figure 14: Example of Security Settings Verification.</p>
             </div>
 </body>
 </html>
