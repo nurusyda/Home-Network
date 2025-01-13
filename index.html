@@ -134,11 +134,11 @@
                 <td>8.8.8.8/24</td>
             </tr>
             <tr>
-                <td>Main Router (Default Gateway - Cisco 2xxx)</td>
+                <td>Main Router (Default Gateway - Cisco 2811)</td>
                 <td>192.168.0.1/24</td>
             </tr>
             <tr>
-                <td>Network Switch (Cisco XXXX)</td>
+                <td>Network Switch (Cisco 2960-24TT)</td>
                 <td></td>
             </tr>
             <tr>
@@ -158,32 +158,32 @@
                 <td>192.168.0.102/24</td>
             </tr>
             <tr>
-                <td>Printer0</td>
-                <td>192.168.0.103</td>
-            </tr>
-            <tr>
                 <td>FTP Server</td>
-                <td>192.168.0.104/24</td>
+                <td>192.168.0.105</td>
             </tr>
             <tr>
                 <td>Laptop0</td>
-                <td>192.168.0.105/24</td>
-            </tr>
-            <tr>
-                <td>Laptop1</td>
                 <td>192.168.0.106/24</td>
             </tr>
             <tr>
-                <td>Laptop2</td>
+                <td>Laptop1</td>
                 <td>192.168.0.107/24</td>
             </tr>
             <tr>
+                <td>Laptop2</td>
+                <td>192.168.0.109/24</td>
+            </tr>
+            <tr>
+                <td>Printer0</td>
+                <td>192.168.0.110/24</td>
+            </tr>
+            <tr>
                 <td>Smartphone0</td>
-                <td>192.168.0.108/24</td>
+                <td>192.168.0.111/24</td>
             </tr>
             <tr>
                 <td>Smartphone1</td>
-                <td>192.168.0.109/24</td>
+                <td>192.168.0.112/24</td>
             </tr>
         </table>
 
@@ -214,16 +214,29 @@ ip dhcp excluded-address 192.168.0.1 192.168.0.99</pre>
 
         <h3>File Sharing Implementation</h3>
         <p>[SS ragkaian dari buat dokumen, nyimpen, sampai ngirim ke ftp, dan ngambil dari server]<br>
-         Complete file sharing process documentation</p>
+         Sending Files via FTP</p>
+        <ol>
+            <li>On Laptop1, access Command Prompt and enter the following commands to upload a file:</li>
+            <pre>
+ftp 192.168.0.105
+username: cisco
+password: [enter password]
+put "The_Clockmaker's_Secret.txt"</pre>
+            
+            <li>On another client device, access Command Prompt and enter the following commands to download the file:</li>
+            <pre>
+ftp 192.168.0.105
+username: cisco
+password: [enter password]
+get "The Midnight Library.txt"</pre>
+        </ol>
 
         <h3>Troubleshooting Procedures</h3>
         <ul>
-            <li>Network Connectivity Verification: [SS total ping pake `arp -a` atau ping manual dari salah satu client]<br>
-            Successful ping test results</li>
-            <li>DHCP Status Verification: [SS DHCP binding]<br>
-            Output of `show ip dhcp binding` command</li>
-            <li>DHCP Conflict Resolution: [SS DHCP conflict]<br>
-            Results of `show ip dhcp conflict` command</li>
+            <li>[SS total ping pake `arp -a` atau ping manual dari salah satu client]<br>
+            Successful ping test results using `show ip arp` command</li>
+            <li>[SS DHCP binding]<br>
+            Output of `show ip dhcp binding` and `show ip dhcp conflict` command in main router</li>
         </ul>
     </div>
 </body>
