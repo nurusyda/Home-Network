@@ -89,13 +89,51 @@
     padding-bottom: 5px; /* Adds spacing between text and line */
     margin-bottom: 15px; /* Adds space below the line */
         }
+        .screenshot-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .config-screenshot {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .verification-screenshots {
+            margin: 20px 0;
+        }
+        
+        .screenshot-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .screenshot-item {
+            flex: 1;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .screenshot-row {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
 <h1 class="underline">Building a Home Network: A Comprehensive Configuration Guide</h1>
     <h2>Network Topology</h2>
         <div class="screenshot-container">
-        <img src="images/Topology1.png" width="800" height="300" />
+        <img src="images/Topology1.png"/>
         <p class="caption">Figure 1: Complete network topology showing router, switch, and end devices</p>
     </div>
     
@@ -184,7 +222,7 @@
 
         <h3>1. Basic Router Setup</h3>
     <div class="screenshot-container">
-        <img src="images/Main-Router2.png" width="800" height="400" />
+        <img src="images/Main-Router2.png"/>
         <p class="caption">Figure 2: Router console access and initial configuration</p>
     </div>
         <h4>Configuration Checklist</h4>
@@ -261,11 +299,11 @@ write memory</pre>
 <div class="verification-screenshots">
     <div class="screenshot-row">
         <div class="screenshot-item">
-                <img src="images/DHCP-Configuration0.png" width="800" height="300" />
+                <img src="images/DHCP-Configuration0.png"/>
                 <p class="caption">Figure 3: DHCP pool configuration</p>
             </div>
             <div class="screenshot-item">
-                <img src="images/Troubleshoot0.png" width="800" height="300" />
+                <img src="images/Troubleshoot0.png"/>
                 <p class="caption">Figure 4: DHCP binding verification</p>
             </div>
         </div>
@@ -313,13 +351,13 @@ show ip dhcp server statistics</pre>
     <div class="verification-screenshots">
         <div class="screenshot-row">
             <div class="screenshot-item">
-                <img src="images/Troubleshoot1.png" width="800" height="500" />
-                <img src="images/Troubleshoot2.png" width="800" height="300" />
+                <img src="images/Troubleshoot1.png"/>
+                <img src="images/Troubleshoot2.png"/>
                 <p class="caption">Figure 5: Ping tests between devices</p>
             </div>
             <div class="screenshot-item">
-                <img src="/api/placeholder/400/300" alt="Traceroute Tests" class="config-screenshot" />
-                <p class="caption">Figure 6: Traceroute verification</p>
+                <img src="images/Traceroute.png"/>
+                <p class="caption">Figure 6: Traceroute verification showing differences between existing and non-existent IPs.</p>
             </div>
         </div>
     </div>
